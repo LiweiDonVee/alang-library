@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alang-library"
+version = "0.1.0"
+description = "Runtime for versioned ALang procedures"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = ["anyio>=4.5,<5", "httpx>=0.27,<1", "jsonschema>=4.23,<5", "mcp>=1.23,<2"]
+
+[project.scripts]
+alang = "alang.cli:main"
+alang-mcp = "alang.mcp_server:main"
+
+[tool.setuptools]
+packages = ["alang"]

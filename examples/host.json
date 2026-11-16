@@ -1,0 +1,15 @@
+{
+  "scope": {
+    "scope": "quickstart",
+    "revision": "1",
+    "resources": {
+      "greeting": {
+        "kind": "terminal",
+        "type": "Text",
+        "capability": "read:greeting",
+        "value": "Hello"
+      }
+    }
+  },
+  "grants": ["read:greeting"]
+}

@@ -1,0 +1,34 @@
+{
+  "source": {
+    "ir_version": 1,
+    "name": "greet",
+    "inputs": {
+      "name": "Text"
+    },
+    "output": "Text",
+    "capabilities": ["read:greeting"],
+    "body": [
+      {
+        "id": "resolve_greeting",
+        "op": "resolve",
+        "ref": {
+          "$ref": {
+            "id": "greeting",
+            "type": "Text"
+          }
+        },
+        "as": "greeting"
+      },
+      {
+        "id": "return",
+        "op": "return",
+        "value": {
+          "$op": ["join", ", ", [{"$var": "greeting"}, {"$var": "name"}]]
+        }
+      }
+    ]
+  },
+  "inputs": {
+    "name": "ALang"
+  }
+}
